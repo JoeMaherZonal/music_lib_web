@@ -1,0 +1,141 @@
+
+hr {
+  margin: 1em;
+  padding: 0em;
+}
+
+header a {
+  color:#4ea1d3;
+  text-decoration: none;
+}
+
+header a:hover {
+  color:#e85a71;
+}
+
+header a:active {
+  color:red;
+}
+
+header :link {
+  text-decoration: none;
+}
+
+header nav {
+  text-align: center;
+}
+
+.container img {
+  height:3em;
+  width: auto;
+}
+
+body .row {
+  font-size: 2vmin;
+  margin-left: 4em;
+  margin-right: 4em;
+  background-color: 505050;
+  color: #4ea1d3;
+  display: block;
+  text-align: center;
+}
+
+body .row .homebox {
+/*  border: 0.1em solid blue;*/
+  height: auto;
+  width: 80em;
+}
+
+
+body .page_title {
+  color:#e85a71;
+  text-align: left;
+  padding-left: 2em;
+}
+
+body img {
+  height: 13em;
+  width: auto;
+  border-radius: 10%;
+}
+
+body iframe {
+/*  width:3em;
+  height: auto;*/
+  border-radius: 10%;
+}
+
+body .row h3 {
+  color:#e85a71;
+}
+body .row h2 {
+  color:#e85a71;
+}
+
+body .new_box {
+  text-align: right;
+  position: relative;
+  right:35em;
+}
+
+body .search_box {
+  text-align: right;
+  position: relative;
+  right:34em;
+}
+
+body .page_box {
+/*  font-size: 2vmin;*/
+  margin-left: 4em;
+  margin-right: 4em;
+  border: 0.1em solid blue;
+/*  background-color: 505050;
+/*  color: white;*/*/
+  display: block;
+}
+
+body .albums_box {
+  padding:3em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 2.5em;
+}
+
+
+footer {
+  color: #4ea1d3;
+  max-height: 10em;
+  margin: 20px;
+  padding-top: 2em;
+  position: relative;
+  bottom: 2em;
+}
+
+footer a {
+  color: #4ea1d3;
+}
+
+footer a:link {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #e85a71;
+}
+
+footer ul {
+list-style: none;
+text-align: center;
+}
+
+footer li {
+padding: 40px;
+display: inline;
+
+}
+footer .col-sm-2 img {
+  padding-left: 30px;
+  height: 1.5em;
+  width: auto;
+  float: right;
+}

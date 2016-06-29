@@ -1,16 +1,29 @@
-<u><h3>Artist and Details</h3></u>
-<h2> <%= @artist.name() %> </h2>
-<a href="/artist/<%=@artist.id%>/edit">Update</a>
-<a href="/artist/<%=@artist.id%>/delete">Delete</a>
-<a href="/album/new">Add Album</a>
-<%albums = @artist.albums()%>
-<h4>Albums</h4>
-<hr>
-<%albums.each do |album|%>
-<p><%=album.name%></p>
-<%image_link = album.image_link%>
-<!-- <p><%=image_link%></p> -->
-<img src= "<%=image_link%>"alt="Mountain View" style="width:304px;height:228px;">
-<a href="/album/<%=album.id%>/edit">Update Album</a>
-<a href="/album/<%=album.id%>/delete">Delete Album</a>
-<%end%>
+<title><%=@artist.name()%></title>
+
+<div class="row">
+  <h3> <%= @artist.name() %> </h3>
+  <br>
+  <img src="<%=@artist.image_link%>">
+  <br>
+  <br>
+  <a href="/artist/<%=@artist.id%>/edit">Update | </a>
+  <a href="/artist/<%=@artist.id%>/delete">Delete | </a>
+  <a href="/album/new">Add Album</a>
+  <br>
+  <br>
+    <%albums = @artist.albums()%>
+    <h3>Albums by <%=@artist.name%></h3><br>
+      <%albums.each do |album|%>
+
+              <h5><%=album.name%></h5>
+              <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=230&height=230&color=007FEB&layout=&size=medium&type=album&id=<%=album.album_link_id%>&app_id=1" width="230" height="230"></iframe>
+              <br>
+              <a href="/album/<%=album.id%>/edit">Update Album    |    </a>
+              <a href="/album/<%=album.id%>/delete">Delete Album</a>
+              <br>
+              <%end%>
+
+
+
+
+</div>

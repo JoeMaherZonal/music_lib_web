@@ -1,11 +1,18 @@
-<h3>Library</h3>
+<title>The Library</title>
 
-<%@artists.each do |artist|%>
- <a href="/artist/<%=artist.id%>"> <p><b><%=artist.name%></b></p></a>
+<div class="row">
+  <h2>The Library</h2>
 
-  <% albums = artist.albums() %>
-    <% albums.each do |album|%>
-      <p><%=album.name%></p>
+  <div>
+  <%@artists.each do |artist|%>
+  <br>
+  <div>
+    <a href="/artist/<%=artist.id%>"> <h4><b><%=artist.name%></b></h4></a>
+      <% albums = artist.albums() %>
+      <% albums.each do |album|%>
+        <p><%=album.name%></p>
+
     <%end%>
-    <hr>
-<%end%>
+  </div>
+  <%end%>
+</div>

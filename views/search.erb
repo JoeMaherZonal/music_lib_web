@@ -1,0 +1,40 @@
+<title>Search Music</title>
+<div class="row">
+  <div class="search_box">
+
+  <form action="/search" method = "get">
+    <input type="text" name="search">
+    <input type="submit" name="Search" value="Search">
+  </form>
+  </div>
+</div>
+
+<div class="row">
+
+  <%if params['search'] != nil%>
+    <% albums = Album.search(params['search'])%>
+    <%artists = Artist.search(params['search'])%>
+
+    <%if artists != nil%>
+      <%artists.each do |artist| %>
+        <a href="/artist/<%=artist.id%>"> <h4><b><%=artist.name%></b></h4></a>
+        <img src="<%=artist.image_link%>">
+        <h4>Albums by <%=artist.name%></h4>
+        <%artist_albums = artist.albums()%>
+          <%artist_albums.each do |album|%>
+            <a href="/artist/<%=album.artist_id%>"> <h4><b><%=album.name%></b></h4></a>
+            <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=230&height=230&color=007FEB&layout=&size=medium&type=album&id=<%=album.album_link_id%>&app_id=1" width="230" height="230"></iframe>
+          <%end%>
+      <%end%>
+    <%end%>
+
+    <%if albums != nil%>
+      <%albums.each do |album| %>
+        <a href="/artist/<%=album.artist_id%>"> <h4><b><%=album.name%></b></h4></a>
+        <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=230&height=230&color=007FEB&layout=&size=medium&type=album&id=<%=album.album_link_id%>&app_id=1" width="230" height="230"></iframe>
+      <%end%>
+    <%end%>
+  <%end%>
+
+
+</div>

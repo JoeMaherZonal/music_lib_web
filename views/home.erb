@@ -1,0 +1,57 @@
+    <title>Music Library</title>
+
+    <% %>
+    <% latest_artists = [] %>
+    <% latest_artists << @artists[-1]   %>
+    <% latest_artists << @artists[-2]   %>
+    <% latest_artists << @artists[-3]   %>
+
+    <% latest_albums = [] %>
+    <% latest_albums << @albums[-1]   %>
+    <% latest_albums << @albums[-2]   %>
+    <% latest_albums << @albums[-3]   %>
+
+
+      <div class="row">
+        <div class ="page_title">
+          <h3>Latest Artists</h3>
+        </div>
+        <div class = "homebox">
+          <div class = "row">
+            <div class = "col-sm-4">
+              <h5><%=latest_artists[0].name%></h5>
+              <img src="<%=latest_artists[0].image_link%>">
+            </div>
+            <div class = "col-sm-4">
+              <h5><%=latest_artists[1].name%></h5>
+              <img src="<%=latest_artists[1].image_link%>">
+            </div>
+            <div class = "col-sm-4">
+              <h5><%=latest_artists[2].name%></h5>
+              <img src="<%=latest_artists[2].image_link%>">
+            </div>
+          </div>
+        </div>
+
+        <div class ="page_title">
+          <h3>Latest Albums</h3>
+        </div>
+        <div class = "homebox">
+          <div class = "row">
+            <div class = "col-sm-4">
+              <h5><%=latest_albums[0].name%></h5>
+              <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=230&height=230&color=007FEB&layout=&size=medium&type=album&id=<%=latest_albums[0].album_link_id%>&app_id=1" width="230" height="230"></iframe>
+            </div>
+            <div class = "col-sm-4">
+              <h5><%=latest_albums[1].name%></h5>
+              <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=230&height=230&color=007FEB&layout=&size=medium&type=album&id=<%=latest_albums[1].album_link_id%>&app_id=1" width="230" height="230"></iframe>
+            </div>
+            <div class = "col-sm-4">
+              <h5><%=latest_albums[2].name%></h5>
+              <iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=230&height=230&color=007FEB&layout=&size=medium&type=album&id=<%=latest_albums[2].album_link_id%>&app_id=1" width="230" height="230"></iframe>
+            </div>
+          </div>
+        </div>
+
+      </div>
+

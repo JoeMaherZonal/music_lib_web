@@ -3,15 +3,16 @@ require_relative('../db/sql_runner')
 require_relative('album')
 
 class Artist
-  attr_reader(:name, :id)
+  attr_reader(:name, :id, :image_link)
   def initialize(options)
     @id = options['id'].to_i
     @name = options['name']
+    @image_link = options['image_link']
     @albums = []
   end
 
   def save()
-    sql = "INSERT INTO artists (name) VALUES ('#{@name}') RETURNING *"
+    sql = "INSERT INTO artists (name, image_link) VALUES ('#{@name}', '#{@image_link}') RETURNING *"
     artist_info = run_sql(sql)
     @id = artist_info.first['id'].to_i
   end
@@ -38,13 +39,20 @@ class Artist
   end
 
   def self.update(options)
-    sql = "UPDATE artists SET name = '#{options['name']}' WHERE id = '#{options['id']}'"
+    sql = "UPDATE artists SET name = '#{options['name']}', image_link = '#{options['image_link']}' WHERE id = '#{options['id']}'"
     run_sql(sql)
   end
 
   def self.delete(id)
     sql = "DELETE FROM artists WHERE id = '#{id}'"
     run_sql(sql)
+  end
+
+  def self.search(text)
+    sql = "SELECT * FROM artists WHERE name LIKE '%#{text}%'"
+    artists = run_sql(sql)
+    results = artists.map{|artist| Artist.new(artist)}
+    return results
   end
 
 end

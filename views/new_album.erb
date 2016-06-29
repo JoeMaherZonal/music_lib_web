@@ -1,19 +1,23 @@
-<h3>Add a new Album</h3>
+<title>Add Album</title>
 
-<form action="/album" method = "post">
-  <label for="name">Name:</label>
-  <input type="text" name="name">
-
-  <label for="artist_id">Select an artist</label>
-    <select name="artist_id">
-      <% @artists.each do |artist|%>
-        <option value="<%=artist.id%>"> <%=artist.name%> </option>
-      <%end%>
-   </select>
-
-   <label for="image_link">Image url link:</label>
-   <input type="text" name="image_link">
-
-
-  <input type="submit" name="Add Album">
-</form>
+<div class="row">
+  <h3>Add a new Album</h3>
+  <div class="new_box">
+    <form action="/album" method = "post">
+      <label for="name">Name:</label>
+      <input type="text" name="name">
+      <br>
+      <label for="artist_id">Select an artist</label>
+        <select name="artist_id">
+          <% @artists.each do |artist|%>
+            <option value="<%=artist.id%>"> <%=artist.name%> </option>
+          <%end%>
+       </select>
+       <br>
+       <label for="album_link_id">Deezer Album ID:</label>
+       <input type="text" name="album_link_id">
+       <br>
+       <input type="submit" name="Add Album">
+    </form>
+  </div>
+</div>

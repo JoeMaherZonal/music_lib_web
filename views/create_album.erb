@@ -1,5 +1,6 @@
+<title>Album Created</title>
+     <div class ="row">
+       <h2><%=@album.name%></h2><br>
 
-<h3>Album successfuly added!</h3>
-<h2> <%= @album.name() %> </h2>
-<img src= "<%=@album.image_link%>"alt="Mountain View" style="width:304px;height:228px;">
-<a href="/library">View Library</a>
+<iframe scrolling="no" frameborder="0" allowTransparency="true" src="https://www.deezer.com/plugins/player?format=square&autoplay=false&playlist=false&width=230&height=230&color=007FEB&layout=&size=medium&type=album&id=<%=@album.album_link_id%>&app_id=1" width="230" height="230"></iframe>
+     </div>

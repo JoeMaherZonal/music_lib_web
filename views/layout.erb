@@ -1,9 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Music App</title>
+  <link rel="shortcut icon" href="/icon.ico">
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/style.css">
 </head>
+
+<header class = "container">
+<hr>
+  <div class = "row">
+
+    <nav class="col-sm-2">
+      <a href ="/"><img class ="img-responsive" src="/note_logo.png"></a>
+    </nav>
+
+    <nav class="col-sm-2" text-center>
+      <h4><a href="/library">Library</a></h4>
+    </nav>
+
+    <nav class="col-sm-2" text-center>
+      <h4><a href="/artist/new">Add Artist</a></h4>
+    </nav>
+
+    <nav class="col-sm-2" text-center>
+      <h4><a href="/album/new">Add Album</a></h4>
+    </nav>
+
+    <nav class="col-sm-2" text-center>
+      <h4><a href="/search">Search</a></h4>
+    </nav>
+
+  </div>
+  <hr>
+</header>
+
 <body>
 <%= yield%>
 </body>
+
+<footer class = "container">
+  <hr>
+  <div class = "row">
+
+    <div class = "col-sm-2">
+      <p>&copy Joe Maher 2016</p>
+    </div>
+
+    <div class = "col-sm-8">
+      <ul class = "footerlist">
+        <li><a href = "/library">Library</a></li>
+        <li><a href = "/artist/new">Add Artist</a></li>
+        <li><a href = "/album/new">Add Album</a></li>
+      </ul>
+    </div>
+
+    <div class = "col-sm-2">
+      <a href = "https://twitter.com/joe_maher_2"> <img src = "/twitter.svg"> </a>
+      <a href = "https://www.facebook.com/joe.maher.5680"> <img src = "/facebook.svg"> </a>
+    </div>
+
+  </div> <!--end of row-->
+</footer>
 </html>

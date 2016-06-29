@@ -1,3 +1,9 @@
-<h3>Artist successfuly added!</h3>
-<h2> <%= @artist.name() %> </h2>
-<a href="/album/new">Add Album</a>
+<title>Artist Created</title>
+<div class="row">
+  <h2> <%= @artist.name() %> </h2>
+  <br>
+  <img src="<%=@artist.image_link%>">
+  <br>
+  <br>
+  <a href="/album/new">Add Album</a>
+</div>
