@@ -3,6 +3,9 @@
 <form action="/album/<%=@album.id%>" method = "post">
   <label for="name"> Name:</label>
   <input type="text" name="name" value="<%=@album.name%>">
+  <label for="image_link">Image url link:</label>
+  <input type="text" name="image_link" value="<%=@album.image_link%>">
+  <p><%=@album.image_link%></p>
 
   <input type="submit" name="Update Album">
 </form>
