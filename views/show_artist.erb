@@ -1,0 +1,12 @@
+<u><h3>Artist and Details</h3></u>
+<h2> <%= @artist.name() %> </h2>
+<a href="/artist/<%=@artist.id%>/edit">Update</a>
+<a href="/artist/<%=@artist.id%>/delete">Delete</a>
+<%albums = @artist.albums()%>
+<h4>Albums</h4>
+<hr>
+<%albums.each do |album|%>
+<p><%=album.name%></p>
+<a href="/album/<%=album.id%>/edit">Update Album</a>
+<a href="/album/<%=album.id%>/delete">Delete Album</a>
+<%end%>

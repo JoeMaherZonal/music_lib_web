@@ -1,0 +1,11 @@
+<h3>Library</h3>
+
+<%@artists.each do |artist|%>
+ <a href="/artist/<%=artist.id%>"> <p><b><%=artist.name%></b></p></a>
+
+  <% albums = artist.albums() %>
+    <% albums.each do |album|%>
+      <p><%=album.name%></p>
+    <%end%>
+    <hr>
+<%end%>
